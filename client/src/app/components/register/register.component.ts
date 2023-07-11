@@ -20,7 +20,7 @@ export class RegisterComponent {
         this.cancel();
       },
       error: (error) => console.log(error),
-      complete: () => console.log('Registration complete'),
+      complete: () => (this.model = {} as UserPwd),
     });
   }
 

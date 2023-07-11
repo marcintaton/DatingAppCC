@@ -22,7 +22,9 @@ export class NavbarComponent implements OnInit {
         console.log(response);
       },
       error: (error) => console.log(error),
-      complete: () => console.log('Login Completed'),
+      complete: () => {
+        this.model = {} as UserPwd;
+      },
     });
   }
 
