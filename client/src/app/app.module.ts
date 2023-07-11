@@ -16,8 +16,9 @@ import { HomeComponent } from './components/home/home.component';
 import { RegisterComponent } from './components/register/register.component';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatchesComponent } from './components/matches/matches.component';
-import { ListsComponent } from './components/lists/lists.component';
 import { ChatComponent } from './components/chat/chat.component';
+import { MemberListComponent } from './components/member-list/member-list.component';
+import { MemberDetailsComponent } from './components/member-details/member-details.component';
 
 @NgModule({
   declarations: [
@@ -26,8 +27,9 @@ import { ChatComponent } from './components/chat/chat.component';
     HomeComponent,
     RegisterComponent,
     MatchesComponent,
-    ListsComponent,
     ChatComponent,
+    MemberListComponent,
+    MemberDetailsComponent,
   ],
   imports: [
     BrowserModule,
