@@ -15,6 +15,9 @@ import { MatIconModule } from '@angular/material/icon';
 import { HomeComponent } from './components/home/home.component';
 import { RegisterComponent } from './components/register/register.component';
 import { MatDividerModule } from '@angular/material/divider';
+import { MatchesComponent } from './components/matches/matches.component';
+import { ListsComponent } from './components/lists/lists.component';
+import { ChatComponent } from './components/chat/chat.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +25,9 @@ import { MatDividerModule } from '@angular/material/divider';
     NavbarComponent,
     HomeComponent,
     RegisterComponent,
+    MatchesComponent,
+    ListsComponent,
+    ChatComponent,
   ],
   imports: [
     BrowserModule,
