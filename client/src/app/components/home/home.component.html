@@ -1,0 +1,20 @@
+<div *ngIf="!(accountService.currentUser$ | async)">
+  <div class="welcome" *ngIf="!registerMode">
+    <h1>Find your match</h1>
+    <h4>You just need to register... trust me, bro...</h4>
+    <div class="ft">
+      <button mat-raised-button color="primary" (click)="setRegisterMode(true)">
+        Register
+      </button>
+      <button mat-stroked-button color="primary">Learn more</button>
+    </div>
+  </div>
+
+  <div class="register" *ngIf="registerMode">
+    <app-register (onCancel)="setRegisterMode($event)" />
+  </div>
+</div>
+
+<div *ngIf="accountService.currentUser$ | async">
+  <h1>Hello user</h1>
+</div>

@@ -1,0 +1,36 @@
+@use "@angular/material" as mat;
+
+@include mat.core();
+
+.title {
+  margin: auto 1em;
+  font-weight: bolder;
+}
+
+.item {
+  margin: auto 1em;
+  font-size: large;
+  line-height: 3.2em;
+}
+
+.form {
+  margin-top: 1em;
+  height: auto;
+  display: flu;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.form-field ::ng-deep {
+  @include mat.form-field-density(-3);
+  font-size: small;
+  margin: 0.5em;
+  width: 12em;
+
+  .label {
+    font-size: small;
+    line-height: 3.2em;
+  }
+}

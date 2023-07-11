@@ -1,0 +1,49 @@
+<mat-toolbar>
+  <span class="title">Dating app</span>
+  <div *ngIf="accountService.currentUser$ | async">
+    <span class="item">Matches</span>
+    <span class="item">Lists</span>
+    <span class="item">Messages</span>
+  </div>
+  <span class="spacer"></span>
+  <span class="form" *ngIf="!(accountService.currentUser$ | async)">
+    <form #loginForm="ngForm" (ngSubmit)="logIn()" autocomplete="off">
+      <mat-form-field appearance="outline" class="form-field">
+        <input
+          matInput
+          placeholder="Login"
+          name="username"
+          [(ngModel)]="model.username"
+        />
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="form-field">
+        <input
+          matInput
+          placeholder="Password"
+          name="password"
+          type="password"
+          [(ngModel)]="model.password"
+        />
+      </mat-form-field>
+      <button mat-raised-button color="primary" type="submit">Log In</button>
+    </form>
+  </span>
+  <span class="item" *ngIf="accountService.currentUser$ | async">{{
+    accountService.currentUser$ | async
+  }}</span>
+  <span class="user" *ngIf="accountService.currentUser$ | async">
+    <button mat-mini-fab [matMenuTriggerFor]="menu">
+      <mat-icon fontIcon="person"></mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item>
+        <mat-icon>edit</mat-icon>
+        <span>Edit profile</span>
+      </button>
+      <button mat-menu-item (click)="logOut()">
+        <mat-icon>exit_to_app</mat-icon>
+        <span>Logout</span>
+      </button>
+    </mat-menu>
+  </span>
+</mat-toolbar>
