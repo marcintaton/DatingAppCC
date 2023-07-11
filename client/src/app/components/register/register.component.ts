@@ -23,16 +23,6 @@ export class RegisterComponent {
       next: () => {
         this.cancel();
       },
-      error: (error) => {
-        if (error.error.errors) {
-          if (error.error.errors.Username != null)
-            this.snackBar.open(error.error.errors.Username[0]);
-          else if (error.error.errors.Password != null)
-            this.snackBar.open(error.error.errors.Password[0]);
-        } else {
-          this.snackBar.open(error.error);
-        }
-      },
       complete: () => (this.model = {} as UserPwd),
     });
   }

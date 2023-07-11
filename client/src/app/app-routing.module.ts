@@ -6,6 +6,9 @@ import { MemberDetailsComponent } from './components/member-details/member-detai
 import { ChatComponent } from './components/chat/chat.component';
 import { ListsComponent } from './components/lists/lists.component';
 import { authGuard } from './guards/auth.guard';
+import { TestErrorComponent } from './components/errors/test-error/test-error.component';
+import { NotFoundComponent } from './components/errors/not-found/not-found.component';
+import { ServerErrorComponent } from './components/errors/server-error/server-error.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -26,8 +29,10 @@ const routes: Routes = [
       { path: 'chat', component: ChatComponent },
     ],
   },
-
-  { path: '**', component: HomeComponent, pathMatch: 'full' },
+  { path: 'errors', component: TestErrorComponent },
+  { path: 'not-found', component: NotFoundComponent },
+  { path: 'server-error', component: ServerErrorComponent },
+  { path: '**', component: NotFoundComponent, pathMatch: 'full' },
 ];
 
 @NgModule({

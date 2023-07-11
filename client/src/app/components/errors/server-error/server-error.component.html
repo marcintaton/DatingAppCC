@@ -1,0 +1,31 @@
+<div>
+  <h1>Internal server Error</h1>
+
+  <ng-container *ngIf="error">
+    <h3>Error: {{ error.message }}</h3>
+
+    <div class="spacer"></div>
+
+    <p>Now what?</p>
+    <ol>
+      <li>Check dev tools for request details</li>
+      <li>Check endpoint url</li>
+      <li>Reproduce in Postman</li>
+    </ol>
+
+    <div class="spacer"></div>
+
+    <p>Stack trace</p>
+    <div class="codeWrapper">
+      <code>
+        {{ error.details }}
+      </code>
+    </div>
+  </ng-container>
+
+  <div class="spacer"></div>
+
+  <button mat-raised-button color="primary" routerLink="/">
+    Go home (you're drunk)
+  </button>
+</div>
