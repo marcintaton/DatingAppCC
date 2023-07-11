@@ -15,10 +15,11 @@ import { MatIconModule } from '@angular/material/icon';
 import { HomeComponent } from './components/home/home.component';
 import { RegisterComponent } from './components/register/register.component';
 import { MatDividerModule } from '@angular/material/divider';
-import { MatchesComponent } from './components/matches/matches.component';
 import { ChatComponent } from './components/chat/chat.component';
 import { MemberListComponent } from './components/member-list/member-list.component';
 import { MemberDetailsComponent } from './components/member-details/member-details.component';
+import { ListsComponent } from './components/lists/lists.component';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -26,10 +27,10 @@ import { MemberDetailsComponent } from './components/member-details/member-detai
     NavbarComponent,
     HomeComponent,
     RegisterComponent,
-    MatchesComponent,
     ChatComponent,
     MemberListComponent,
     MemberDetailsComponent,
+    ListsComponent,
   ],
   imports: [
     BrowserModule,
@@ -43,6 +44,10 @@ import { MemberDetailsComponent } from './components/member-details/member-detai
     MatMenuModule,
     MatIconModule,
     MatDividerModule,
+    ToastrModule.forRoot({
+      positionClass: 'toast-bottom-right',
+      preventDuplicates: true,
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent],

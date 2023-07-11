@@ -1,9 +1,27 @@
 <mat-toolbar>
-  <span class="title">Dating app</span>
+  <span class="title" routerLink="/">Dating app</span>
   <div *ngIf="accountService.currentUser$ | async">
-    <span class="item">Matches</span>
-    <span class="item">Lists</span>
-    <span class="item">Messages</span>
+    <button
+      mat-button
+      routerLink="/members"
+      [color]="hasLocation('members') ? 'accent' : ''"
+    >
+      Matches
+    </button>
+    <button
+      mat-button
+      routerLink="/lists"
+      [color]="hasLocation('lists') ? 'accent' : ''"
+    >
+      Lists
+    </button>
+    <button
+      mat-button
+      routerLink="/chat"
+      [color]="hasLocation('chat') ? 'accent' : ''"
+    >
+      Chat
+    </button>
   </div>
   <span class="spacer"></span>
   <span class="form" *ngIf="!(accountService.currentUser$ | async)">
