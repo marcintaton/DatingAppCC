@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
-import { ToastrService } from 'ngx-toastr';
-import { Observable, of } from 'rxjs';
 import { AccountService } from 'src/app/services/account.service';
-import User from 'src/types/interfaces/user';
 import UserPwd from 'src/types/interfaces/userPwd';
 
 @Component({
@@ -17,7 +15,7 @@ export class NavbarComponent implements OnInit {
   constructor(
     public accountService: AccountService,
     private router: Router,
-    private toastr: ToastrService
+    private snackBar: MatSnackBar
   ) {}
 
   ngOnInit(): void {}
@@ -30,11 +28,11 @@ export class NavbarComponent implements OnInit {
       error: (error) => {
         if (error.error.errors) {
           if (error.error.errors.Username != null)
-            this.toastr.error(error.error.errors.Username[0]);
+            this.snackBar.open(error.error.errors.Username[0]);
           else if (error.error.errors.Password != null)
-            this.toastr.error(error.error.errors.Password[0]);
+            this.snackBar.open(error.error.errors.Password[0]);
         } else {
-          this.toastr.error(error.error);
+          this.snackBar.open(error.error);
         }
       },
       complete: () => {

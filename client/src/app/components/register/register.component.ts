@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Output } from '@angular/core';
-import { ToastrService } from 'ngx-toastr';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { AccountService } from 'src/app/services/account.service';
 import UserPwd from 'src/types/interfaces/userPwd';
 
@@ -15,7 +15,7 @@ export class RegisterComponent {
 
   constructor(
     private accountService: AccountService,
-    private toastr: ToastrService
+    private snackBar: MatSnackBar
   ) {}
 
   register() {
@@ -26,11 +26,11 @@ export class RegisterComponent {
       error: (error) => {
         if (error.error.errors) {
           if (error.error.errors.Username != null)
-            this.toastr.error(error.error.errors.Username[0]);
+            this.snackBar.open(error.error.errors.Username[0]);
           else if (error.error.errors.Password != null)
-            this.toastr.error(error.error.errors.Password[0]);
+            this.snackBar.open(error.error.errors.Password[0]);
         } else {
-          this.toastr.error(error.error);
+          this.snackBar.open(error.error);
         }
       },
       complete: () => (this.model = {} as UserPwd),

@@ -1,6 +1,6 @@
 <mat-toolbar>
   <span class="title" routerLink="/">Dating app</span>
-  <div *ngIf="accountService.currentUser$ | async">
+  <ng-container *ngIf="accountService.currentUser$ | async">
     <button
       mat-button
       routerLink="/members"
@@ -22,7 +22,7 @@
     >
       Chat
     </button>
-  </div>
+  </ng-container>
   <span class="spacer"></span>
   <span class="form" *ngIf="!(accountService.currentUser$ | async)">
     <form #loginForm="ngForm" (ngSubmit)="logIn()" autocomplete="off">
@@ -46,8 +46,8 @@
       <button mat-raised-button color="primary" type="submit">Log In</button>
     </form>
   </span>
-  <span class="item" *ngIf="accountService.currentUser$ | async">{{
-    accountService.currentUser$ | async
+  <span class="item" *ngIf="accountService.currentUser$ | async as user">{{
+    user.username | titlecase
   }}</span>
   <span class="user" *ngIf="accountService.currentUser$ | async">
     <button mat-mini-fab [matMenuTriggerFor]="menu">
