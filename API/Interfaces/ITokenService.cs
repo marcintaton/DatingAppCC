@@ -1,5 +1,5 @@
 
-using API.Controllers;
+using API.Entities;
 
 namespace API.Interfaces
 {

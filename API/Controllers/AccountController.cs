@@ -6,7 +6,7 @@ using API.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
-namespace API.Controllers
+namespace API.Entities
 {
     public class AccountController : BaseApiController
     {

@@ -6,7 +6,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
-using API.Controllers;
+using API.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace API.Data

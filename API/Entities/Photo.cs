@@ -1,7 +1,7 @@
 
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace API.Controllers
+namespace API.Entities
 {
     [Table("Photos")]
     public class Photo
