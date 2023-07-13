@@ -9,6 +9,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list';
+import { MatTabsModule } from '@angular/material/tabs';
 import {
   MAT_SNACK_BAR_DEFAULT_OPTIONS,
   MatSnackBarModule,
@@ -28,6 +29,7 @@ import {
     MatSnackBarModule,
     MatCardModule,
     MatGridListModule,
+    MatTabsModule,
   ],
   providers: [
     {
@@ -51,6 +53,7 @@ import {
     MatSnackBarModule,
     MatCardModule,
     MatGridListModule,
+    MatTabsModule,
   ],
 })
 export class SharedModule {}

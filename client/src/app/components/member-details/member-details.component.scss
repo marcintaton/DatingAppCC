@@ -1,0 +1,54 @@
+.card {
+  margin: 4em 1em 1em 4em;
+}
+
+mat-divider {
+  margin: 1em 0;
+}
+
+.card-section {
+  margin-bottom: 1em;
+}
+
+mat-card-title {
+  font-weight: bolder;
+}
+
+img {
+  //   box-shadow: 5px 5px 10px darkgray;
+}
+
+.key {
+  font-weight: bolder;
+  margin: 0;
+}
+
+.img-btn-wrapper {
+  margin: 0;
+  padding: 0;
+}
+
+.buttons {
+  margin: 1em auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+}
+
+.img-btn {
+  margin: 0 1em;
+  border: solid;
+}
+
+.card-tabs {
+  width: 800px;
+  height: 700px;
+
+  margin: 4em 1em;
+}
+
+.tab-content {
+  padding: 1em;
+  height: 600px;
+}

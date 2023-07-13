@@ -1,5 +1,9 @@
 <mat-toolbar>
-  <span class="title" routerLink="/">Dating app</span>
+  <span
+    class="title"
+    routerLink="{{ !(accountService.currentUser$ | async) ? '/' : '/members' }}"
+    >Dating app</span
+  >
   <ng-container *ngIf="accountService.currentUser$ | async">
     <button
       mat-button

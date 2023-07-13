@@ -1,1 +1,75 @@
-<p>member-details works!</p>
+<div class="content">
+  <div fxLayout="row wrap">
+    <div>
+      <mat-card class="card" *ngIf="member">
+        <mat-card-header>
+          <div class="img-btn-wrapper">
+            <mat-card-title class="card-section xname">{{
+              member.knownAs
+            }}</mat-card-title>
+            <mat-divider></mat-divider>
+            <img mat-card-xl-image src="{{ member.photoUrl }}" />
+
+            <div class="buttons">
+              <button class="img-btn" mat-mini-fab>
+                <mat-icon>favorite</mat-icon>
+              </button>
+              <button class="img-btn" mat-mini-fab>
+                <mat-icon>chat</mat-icon>
+              </button>
+            </div>
+            <mat-divider></mat-divider>
+
+            <mat-card-title-group>
+              <mat-card-subtitle class="card-section">
+                <p class="key">Location</p>
+                <p>{{ member.city + ", " + member.country }}</p>
+              </mat-card-subtitle>
+              <mat-card-subtitle class="card-section">
+                <p class="key">Age</p>
+                <p>{{ member.age }}</p>
+              </mat-card-subtitle>
+              <mat-card-subtitle class="card-section">
+                <p class="key">Last active</p>
+                <p>{{ member.lastActive }}</p>
+              </mat-card-subtitle>
+              <mat-card-subtitle class="card-section">
+                <p class="key">Last active</p>
+                <p>{{ member.lastActive }}</p>
+              </mat-card-subtitle>
+              <mat-card-subtitle class="card-section">
+                <p class="key">Member since</p>
+                <p>{{ member.created }}</p>
+              </mat-card-subtitle>
+            </mat-card-title-group>
+          </div>
+        </mat-card-header>
+      </mat-card>
+    </div>
+    <div>
+      <mat-card *ngIf="member" class="card-tabs">
+        <mat-tab-group>
+          <mat-tab label="About">
+            <div class="tab-content">
+              <h1>Description</h1>
+              <h3>{{ member.introduction }}</h3>
+              <h1>looking for</h1>
+              <h3>{{ member.lookingFor }}</h3>
+            </div>
+          </mat-tab>
+          <mat-tab label="Interests">
+            <div class="tab-content">
+              <h3>{{ member.interests }}</h3>
+            </div>
+          </mat-tab>
+          <mat-tab label="Photos">
+            <div class="tab-content">gallery goes here</div>
+          </mat-tab>
+          <mat-tab label="Messages">
+            <div class="tab-content">chat goes here</div>
+          </mat-tab>
+        </mat-tab-group>
+      </mat-card>
+    </div>
+  </div>
+</div>
