@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
-import UserPwd from 'src/types/interfaces/userPwd';
+import UserPwd from 'src/app/types/interfaces/userPwd';
 
 @Component({
   selector: 'app-test-error',

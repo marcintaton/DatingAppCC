@@ -49,9 +49,14 @@
   <span class="item" *ngIf="accountService.currentUser$ | async as user">{{
     user.username | titlecase
   }}</span>
-  <span class="user" *ngIf="accountService.currentUser$ | async">
-    <button mat-mini-fab [matMenuTriggerFor]="menu">
-      <mat-icon fontIcon="person"></mat-icon>
+  <span class="user" *ngIf="accountService.currentUser$ | async as user">
+    <button
+      mat-mini-fab
+      class="image"
+      [matMenuTriggerFor]="menu"
+      [style.backgroundImage]="'url(' + currentMember?.photoUrl + ')'"
+    >
+      <!-- <mat-icon fontIcon="person"></mat-icon> -->
     </button>
     <mat-menu #menu="matMenu">
       <button mat-menu-item>

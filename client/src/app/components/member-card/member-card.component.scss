@@ -1,0 +1,65 @@
+@import "/src/styles.scss";
+
+.card:hover img {
+  transform: scale(1.2, 1.2);
+  transition-duration: 500ms;
+  transition-timing-function: ease-out;
+  opacity: 0.7;
+}
+
+.card img {
+  transform: scale(1, 1);
+  transition-duration: 500ms;
+  transition-timing-function: ease-out;
+}
+
+.padded {
+  padding: 0.3em 1em;
+}
+
+mat-card-header {
+  margin-top: 0.5em;
+  font-weight: bold;
+}
+
+mat-divider {
+  width: 80%;
+  margin: auto;
+}
+
+.img-wrapper {
+  overflow: hidden;
+  height: 128px;
+}
+
+mat-card {
+  overflow: hidden;
+}
+
+.img-btn-warpper {
+  position: absolute;
+  padding: 0;
+  margin: 0;
+  top: 0;
+  width: 100%;
+  height: 128px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.img-btn-warpper:hover .img-btn {
+  opacity: 1;
+}
+
+.img-btn {
+  scale: 80%;
+  border: solid;
+  background-color: rgba($color: $mat-accent, $alpha: 0.4);
+  bottom: -40px;
+  opacity: 0;
+}
+
+.animate {
+  transition: all 0.3s ease-in-out;
+}

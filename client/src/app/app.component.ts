@@ -1,9 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { AccountService } from './services/account.service';
-import User from 'src/types/interfaces/user';
+import User from 'src/app/types/interfaces/user';
 import { JsonPipe } from '@angular/common';
-import UserPwd from 'src/types/interfaces/userPwd';
+import UserPwd from 'src/app/types/interfaces/userPwd';
 
 @Component({
   selector: 'app-root',

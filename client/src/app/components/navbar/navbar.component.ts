@@ -2,7 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { AccountService } from 'src/app/services/account.service';
-import UserPwd from 'src/types/interfaces/userPwd';
+import { MembersService } from 'src/app/services/members.service';
+import Member from 'src/app/types/interfaces/member';
+import UserPwd from 'src/app/types/interfaces/userPwd';
 
 @Component({
   selector: 'app-navbar',
@@ -12,13 +14,24 @@ import UserPwd from 'src/types/interfaces/userPwd';
 export class NavbarComponent implements OnInit {
   model: UserPwd = {} as UserPwd;
 
+  currentMember: Member | undefined = undefined;
+
   constructor(
     public accountService: AccountService,
-    private router: Router,
-    private snackBar: MatSnackBar
+    public membersService: MembersService,
+    private router: Router
   ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.accountService.currentUser$.subscribe({
+      next: (res) => {
+        if (!res) return;
+        this.membersService.getMember(res?.username).subscribe({
+          next: (res) => (this.currentMember = res),
+        });
+      },
+    });
+  }
 
   logIn() {
     this.accountService.login(this.model).subscribe({

@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { AccountService } from 'src/app/services/account.service';
-import UserPwd from 'src/types/interfaces/userPwd';
+import UserPwd from 'src/app/types/interfaces/userPwd';
 
 @Component({
   selector: 'app-register',

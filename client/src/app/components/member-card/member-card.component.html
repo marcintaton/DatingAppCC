@@ -1,0 +1,20 @@
+<mat-card *ngIf="member" class="card">
+  <div class="img-wrapper">
+    <img mat-card-image src="{{ member.photoUrl }}" />
+    <ul class="img-btn-warpper">
+      <button class="img-btn animate" mat-mini-fab>
+        <mat-icon>favorite</mat-icon>
+      </button>
+      <button class="img-btn animate" mat-mini-fab>
+        <mat-icon>person</mat-icon>
+      </button>
+      <button class="img-btn animate" mat-mini-fab>
+        <mat-icon>chat</mat-icon>
+      </button>
+    </ul>
+  </div>
+  <mat-card-header class="padded">{{ member.knownAs }}</mat-card-header>
+  <mat-card-content class="padded">{{ member.city }}</mat-card-content>
+  <mat-divider></mat-divider>
+  <mat-card-footer class="padded">Like or sth...</mat-card-footer>
+</mat-card>

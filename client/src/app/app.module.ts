@@ -18,6 +18,8 @@ import { TestErrorComponent } from './components/errors/test-error/test-error.co
 import { ErrorInterceptor } from './interceptors/error.interceptor';
 import { NotFoundComponent } from './components/errors/not-found/not-found.component';
 import { ServerErrorComponent } from './components/errors/server-error/server-error.component';
+import { AuthorizaionInterceptor as AuthorizationInterceptor } from './interceptors/authorization.interceptor';
+import { MemberCardComponent } from './components/member-card/member-card.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +34,7 @@ import { ServerErrorComponent } from './components/errors/server-error/server-er
     TestErrorComponent,
     NotFoundComponent,
     ServerErrorComponent,
+    MemberCardComponent,
   ],
   imports: [
     BrowserModule,
@@ -45,6 +48,11 @@ import { ServerErrorComponent } from './components/errors/server-error/server-er
     {
       provide: HTTP_INTERCEPTORS,
       useClass: ErrorInterceptor,
+      multi: true,
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthorizationInterceptor,
       multi: true,
     },
   ],
