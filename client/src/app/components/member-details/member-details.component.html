@@ -8,7 +8,10 @@
               member.knownAs
             }}</mat-card-title>
             <mat-divider></mat-divider>
-            <img mat-card-xl-image src="{{ member.photoUrl }}" />
+            <img
+              mat-card-xl-image
+              src="{{ member.photoUrl || '.assets/user.png' }}"
+            />
 
             <div class="buttons">
               <button class="img-btn" mat-mini-fab>
@@ -63,7 +66,13 @@
             </div>
           </mat-tab>
           <mat-tab label="Photos">
-            <div class="tab-content">gallery goes here</div>
+            <div class="tab-content">
+              <ngx-gallery
+                [options]="galleryOptions"
+                [images]="galleryImages"
+                class="ngx-gallery"
+              ></ngx-gallery>
+            </div>
           </mat-tab>
           <mat-tab label="Messages">
             <div class="tab-content">chat goes here</div>

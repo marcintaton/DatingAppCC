@@ -10,6 +10,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatTabsModule } from '@angular/material/tabs';
+import { NgxGalleryModule } from '@kolkov/ngx-gallery';
 import {
   MAT_SNACK_BAR_DEFAULT_OPTIONS,
   MatSnackBarModule,
@@ -30,6 +31,7 @@ import {
     MatCardModule,
     MatGridListModule,
     MatTabsModule,
+    NgxGalleryModule,
   ],
   providers: [
     {
@@ -54,6 +56,7 @@ import {
     MatCardModule,
     MatGridListModule,
     MatTabsModule,
+    NgxGalleryModule,
   ],
 })
 export class SharedModule {}
