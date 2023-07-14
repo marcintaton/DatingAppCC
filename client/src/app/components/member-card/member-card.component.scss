@@ -1,5 +1,9 @@
 @import "/src/styles.scss";
 
+mat-card {
+  width: 128px;
+}
+
 .card:hover img {
   transform: scale(1.2, 1.2);
   transition-duration: 500ms;
@@ -11,6 +15,7 @@
   transform: scale(1, 1);
   transition-duration: 500ms;
   transition-timing-function: ease-out;
+  width: 100%;
 }
 
 .padded {

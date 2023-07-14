@@ -20,6 +20,7 @@ import { NotFoundComponent } from './components/errors/not-found/not-found.compo
 import { ServerErrorComponent } from './components/errors/server-error/server-error.component';
 import { AuthorizaionInterceptor as AuthorizationInterceptor } from './interceptors/authorization.interceptor';
 import { MemberCardComponent } from './components/member-card/member-card.component';
+import { MemberEditComponent } from './components/member-edit/member-edit.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { MemberCardComponent } from './components/member-card/member-card.compon
     NotFoundComponent,
     ServerErrorComponent,
     MemberCardComponent,
+    MemberEditComponent,
   ],
   imports: [
     BrowserModule,

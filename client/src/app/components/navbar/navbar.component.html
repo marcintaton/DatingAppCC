@@ -58,12 +58,14 @@
       mat-mini-fab
       class="image"
       [matMenuTriggerFor]="menu"
-      [style.backgroundImage]="'url(' + currentMember?.photoUrl + ')'"
-    >
-      <!-- <mat-icon fontIcon="person"></mat-icon> -->
-    </button>
+      [style.backgroundImage]="
+        currentMember?.photoUrl
+          ? 'url(' + currentMember?.photoUrl + ')'
+          : 'url(' + '../assets/user.png' + ')'
+      "
+    ></button>
     <mat-menu #menu="matMenu">
-      <button mat-menu-item>
+      <button mat-menu-item routerLink="member/edit">
         <mat-icon>edit</mat-icon>
         <span>Edit profile</span>
       </button>

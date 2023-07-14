@@ -144,12 +144,7 @@
     "Interests": "Reprehenderit Lorem do adipisicing dolore cupidatat dolor eiusmod enim eiusmod adipisicing amet non.",
     "City": "Emerald",
     "Country": "Nicaragua",
-    "Photos": [
-      {
-        "Url": "https://randomuser.me/api/portraits/men/42.jpg",
-        "IsMain": true
-      }
-    ]
+    "Photos": []
   },
   {
     "UserName": "Mark",
