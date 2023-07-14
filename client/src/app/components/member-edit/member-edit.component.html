@@ -1,1 +1,118 @@
-<p>member-edit works!</p>
+<div class="content">
+  <div fxLayout="row wrap">
+    <div>
+      <mat-card class="card" *ngIf="member">
+        <mat-card-header>
+          <div class="img-btn-wrapper">
+            <mat-card-title class="card-section xname">{{
+              member.knownAs
+            }}</mat-card-title>
+            <mat-divider></mat-divider>
+            <img
+              mat-card-xl-image
+              src="{{ member.photoUrl || '../assets/user.png' }}"
+            />
+
+            <mat-card-title-group>
+              <mat-card-subtitle class="card-section">
+                <p class="key">Location</p>
+                <p>{{ member.city + ", " + member.country }}</p>
+              </mat-card-subtitle>
+              <mat-card-subtitle class="card-section">
+                <p class="key">Age</p>
+                <p>{{ member.age }}</p>
+              </mat-card-subtitle>
+              <mat-card-subtitle class="card-section">
+                <p class="key">Last active</p>
+                <p>{{ member.lastActive }}</p>
+              </mat-card-subtitle>
+              <mat-card-subtitle class="card-section">
+                <p class="key">Last active</p>
+                <p>{{ member.lastActive }}</p>
+              </mat-card-subtitle>
+              <mat-card-subtitle class="card-section">
+                <p class="key">Member since</p>
+                <p>{{ member.created }}</p>
+              </mat-card-subtitle>
+            </mat-card-title-group>
+            <mat-divider></mat-divider>
+            <button
+              mat-raised-button
+              color="primary"
+              class="save-btn"
+              form="editForm"
+              type="submit"
+              [disabled]="!editForm?.dirty"
+            >
+              Save
+            </button>
+          </div>
+        </mat-card-header>
+      </mat-card>
+    </div>
+    <div>
+      <mat-card *ngIf="member" class="card-tabs">
+        <mat-tab-group>
+          <mat-tab label="Edit details">
+            <form
+              (ngSubmit)="updateMember()"
+              id="editForm"
+              #editForm="ngForm"
+              class="tab-content"
+            >
+              <h1>Description</h1>
+              <mat-form-field class="full-width">
+                <textarea
+                  class="text-field"
+                  [(ngModel)]="member.introduction"
+                  name="introduction"
+                  matInput
+                ></textarea>
+              </mat-form-field>
+              <h1>looking for</h1>
+              <mat-form-field class="full-width">
+                <textarea
+                  class="text-field"
+                  [(ngModel)]="member.lookingFor"
+                  name="lookingFor"
+                  matInput
+                ></textarea>
+              </mat-form-field>
+              <h1>Interests</h1>
+              <mat-form-field class="full-width">
+                <textarea
+                  class="text-field"
+                  [(ngModel)]="member.interests"
+                  name="interests"
+                  matInput
+                ></textarea>
+              </mat-form-field>
+              <h1>Location</h1>
+              <mat-form-field appearance="outline" class="form-field">
+                <mat-label>City</mat-label>
+                <input
+                  matInput
+                  placeholder="Login"
+                  name="city"
+                  [(ngModel)]="member.city"
+                />
+              </mat-form-field>
+              <mat-form-field appearance="outline" class="form-field">
+                <mat-label>Country</mat-label>
+                <input
+                  matInput
+                  placeholder="Login"
+                  name="country"
+                  [(ngModel)]="member.country"
+                />
+              </mat-form-field>
+            </form>
+          </mat-tab>
+          <mat-tab label="Edit photos">
+            <div class="tab-content">photos</div>
+          </mat-tab>
+        </mat-tab-group>
+      </mat-card>
+    </div>
+  </div>
+</div>
